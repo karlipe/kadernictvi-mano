@@ -1,0 +1,357 @@
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	background: white;
+	color: white;
+	line-height: 1.6;
+	height: 100vh;
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+
+}
+
+.navbar{
+	position: fixed;
+	top: 0;
+	z-index:1;
+	display: flex;
+	width: 100%;
+	height: 60px;
+	border-bottom: 1px rgba(255, 255, 255, 0.4) solid;
+	/*background: grey;  */
+}
+
+.navbar ul{
+	display: flex;
+	list-style: none;;
+	width: 100%;
+	justify-content: center;
+}
+
+.navbar ul li{
+	margin: 0 1rem;
+	padding: 1rem;
+
+}
+
+.navbar ul li a{
+	text-decoration:none;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.7);
+	/*color: black;*/
+}
+.navbar ul li.dropdown{
+	display: none;
+}
+
+section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+
+}
+
+section h1{
+	font-size: 3.5rem;
+	color: black;
+	text-transform: uppercase;
+}
+
+section p {
+	font-size: 1.5rem;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+section#home{
+	background:url('bck.png') no-repeat center center/cover;
+	
+}
+section#home h1{
+	color: rgba(255, 255, 255, 0.7);
+}
+
+section#pricelist_men{
+	background: url('men_bck1.jpg')no-repeat center center/cover;
+	/*background-position: left;*/
+}
+/*#pricelist_men div*/.circle{
+	display: flex;
+	border: 5px rgba(169, 169, 169, 0.5) solid;
+	border-radius: 15%;
+	justify-items:center;
+	height: 45rem;
+	width: 45rem;
+	/*background-color: grey;*/
+
+
+}
+.circle h1{
+	color:rgba(255, 255, 255, 0.85);
+	mix-blend-mode: difference;
+
+}
+
+.circle div.inside-container{
+
+	height: 85%;
+	width: 85%;
+	margin:auto;
+}
+div.price-container{
+	width: 100%;
+	height: 90%;
+	border: none;
+	display:grid;
+	grid-template-columns: 80% 20%;
+	grid-template-rows: repeat(6, 16.6%);
+}
+div.price-container div{
+	border: none;
+}
+
+div.price-container div.category{
+	display:flex;
+	justify-content: left;
+	align-items: center;
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	mix-blend-mode: difference;
+	font-weight: bold;
+
+}
+div.price-container div.price{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	mix-blend-mode: difference;
+	font-weight: bold;
+
+}
+
+@media screen and (min-width: 2500px) {
+	.circle{
+		width: 1100px;
+		height: 1100px;
+	}
+	.circle h1{
+		font-size: 4.5rem;
+	}
+	div.price-container div.category{
+		font-size: 1.9rem;
+	}
+	div.price-container div.price{
+		font-size: 1.9rem;
+	}
+}
+
+@media screen and (max-width: 1440px){
+	.circle{
+		width: 40rem;
+		height: 40rem;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.circle{
+		width: 30rem;
+		height: 30rem;
+	}
+	
+	.circle h1{
+		font-size:  2rem;
+	}
+	div.price-container div.category{
+		font-size: 1rem;
+	}
+	div.price-container div.price{
+		font-size: 1rem;
+	}
+	/*.navbar ul li{
+		display: none;
+	}
+	.navbar ul li.dropdown{
+		display: block;
+	}*/
+}
+
+@media screen and (max-width: 754px){
+	.circle{
+		width: 25rem;
+		height: 25rem;
+	}
+
+	.circle h1{
+		font-size:  2rem;
+	}
+	div.price-container div.category{
+		font-size: 0.75rem;
+	}
+	div.price-container div.price{
+		font-size: 0.75rem;
+	}
+
+	.navbar ul li{
+		display: none;
+	}
+	.navbar ul {
+		justify-content: flex-end;
+	}
+	.navbar ul li.dropdown{
+		display:block;
+		padding: 0.8rem;
+		margin:0 1rem 0.5rem;
+	}
+	.navbar ul li.dropdown a.dropdown{
+		font-size: 30px;
+	}
+	.navbar-responsive{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+		height: calc(6 * 61px);
+		/*transition: height 1s ease-in-out;*/
+		background-color: black;
+		
+	}
+	.navbar-responsive ul{
+		height: 100%;
+		display:grid;
+		grid-template-rows: repeat(6, 61px);
+	}
+	.navbar-responsive ul li{
+		display:flex;
+		justify-content: left;
+		align-items: center;
+		border-bottom: 1px rgba(255, 255, 255, 0.4) solid;
+		order: 2;
+	}
+	.navbar-responsive ul li a {
+		text-transform: uppercase;
+		text-decoration: none;
+		font-weight: bold;
+		color: rgba(255, 255, 255, 0.7);
+	}
+	.navbar-responsive ul li.dropdown{
+		order: 1;
+		justify-content: flex-end;
+	}
+	.navbar-responsive ul li.dropdown a.dropdown{
+		font-size: 30px;
+		padding: 0.8rem;
+		margin:1.35rem 1rem 0.5rem;
+		font-weight:normal;
+
+	}
+}
+@media screen and (max-width: 400px){
+	section#pricelist_men{
+		display:flex;	
+		justify-content: center;
+		align-items: center;
+	}
+	.circle{
+		width: 16rem;
+		height: 16rem;
+		margin:auto;
+
+	}
+
+	.circle h1{
+		font-size:  1.5rem;
+	}
+	#pricelist_women div.price-container div.category,#pricelist_women div.price-container div.category{
+		font-size: 0.45rem;
+	}
+	div.price-container div.category{
+		font-size: 0.55rem;
+	}
+	div.price-container div.price{
+		font-size: 0.55rem;
+	}
+}
+
+/*################### Women ##################*/
+
+section#pricelist_women{
+	background: url("women_bck.jpg")no-repeat center center/cover;
+}
+
+#pricelist_women .price-container{
+	grid-template-rows: repeat(8, calc(100%/8));
+	grid-template-columns: 80% 20%;
+}
+
+/*##################### Other ####################*/
+
+section#pricelist_other{
+	background: url("other_bck.jpg")no-repeat center center/cover;
+}
+
+#pricelist_other .price-container{
+	grid-template-rows: repeat(4, 25%);
+}
+
+#pricelist_other .inside-container h1, #pricelist_other .category, #pricelist_other .price{
+	color: rgba(255, 255, 255, 0.8);
+	mix-blend-mode: normal;
+}
+
+/*#################### Kontakt ##################*/
+
+#contacts .container{
+	width: 80%;
+	height: 60%;
+	display:inline-block;
+	margin-top: 5%;
+	
+}
+.info{
+	/*display:inline-block;*/
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-content: center;
+	text-align: left;
+	float: left;
+	height: 100%;
+	width: 50%;
+	color: rgba(0,0,0, 0.6);
+	text-transform: uppercase;
+}
+
+.info i{
+	color:grey;
+}
+
+.map-container{
+	display:inline-block;
+	float:right;
+	height: 100%;
+	width: 50%;
+
+}
+#map{
+	height: 80%;
+	width: 90%;
+	margin:auto 5%;
+}
+#map iframe{
+	border: 2px solid black;
+	border-radius: 5%;
+}
